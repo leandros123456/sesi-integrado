@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <br>
+  <title>Matrizes Energéticas - Geografia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="hero">
+   
+  </header>
+
+  <main class="container">
+    <section id="introducao">
+      <h2>MATRIZES ENERGÉTICAS</h2>
+      <p>A matriz energética é o conjunto de todas as fontes de energia disponíveis e utilizadas por um país para
+        movimentar sua economia e atender às necessidades da população. Em outras palavras, ela representa de onde vem a
+        energia que usamos no nosso dia a dia – seja para acender uma lâmpada, abastecer um carro, produzir bens em uma
+        fábrica ou manter hospitais e escolas funcionando.
+        Cada país possui uma matriz energética própria, baseada em fatores como a disponibilidade de recursos naturais,
+        o nível de desenvolvimento tecnológico, as políticas governamentais e os investimentos realizados no setor de
+        energia. Essa matriz é formada por diversas fontes de energia, que se dividem em dois grupos principais:
+        renováveis e não renováveis.</p>
+      <br>
+      <h2>Importância na Economia do Brasil</h2>
+      <p>A matriz energética exerce um papel central na economia brasileira, sendo determinante para o desenvolvimento
+        socioeconômico do país. Uma matriz energética robusta e diversificada contribui diretamente para o crescimento
+        econômico, pois assegura o fornecimento contínuo de energia às atividades produtivas, estimula a geração de
+        empregos e promove a melhoria da qualidade de vida da população. Além disso, o Brasil se destaca
+        internacionalmente por dispor de uma ampla variedade de recursos naturais renováveis, como as hidrelétricas e a
+        biomassa, o que o coloca em uma posição privilegiada na transição para uma matriz energética mais limpa e
+        sustentável, em sintonia com os compromissos ambientais globais.
+        A disponibilidade de energia a custos mais acessíveis e com alto grau de confiabilidade representa um fator
+        estratégico para a competitividade da indústria nacional, reduzindo os custos operacionais, atraindo
+        investimentos estrangeiros e fortalecendo a posição do Brasil no comércio internacional. Assim, a matriz energética brasileira não apenas sustenta o
+        funcionamento da economia, mas também projeta o Brasil como um agente ativo e responsável no cenário energético
+        global.</p>
+    </section>
+    <br>
+    <section id="tipos">
+      <h2>Matrizes Energéticas Existentes</h2>
+      <br>
+      <div class="grid">
+        <div class="card">
+          <h3>HIDRELÉTRICA</h3>
+          <p>Principal fonte no Brasil. Renovável, mas depende da água dos rios. A energia hidrelétrica é aquela que é gerada ao transformar a força da água em energia elétrica. Para aproveitar tal força, são construídas grandes infraestruturas hidráulicas capazes de extrair o máximo potencial desse recurso renovável, livre de emissões e que se origina na própria área.</p>
+          <img src="hidreletrica.png" alt="Tabela de características energéticas" class="img-hidreletrica">
+        </div>
+        <div class="card">
+          <h3>SOLAR</h3>
+          <p>Energia solar é a energia proveniente do sol, que pode ser utilizada para diversas finalidades, como gerar eletricidade, aquecer água e até mesmo construir casas com maior eficiência energética. É uma fonte de energia renovável e sustentável, com baixo impacto ambiental. Fonte limpa e promissora. Custo de instalação ainda é elevado.</p>
+          <img src="solar.png" alt="Tabela de características energéticas" class="img-solar">
+        </div>
+        <div class="card">
+          <h3>CARVÃO MINERAL</h3>
+          <p> O carvão mineral é uma fonte de energia não renovável, utilizada principalmente para geração de eletricidade, especialmente em termelétricas. Alta emissão de poluentes. No Brasil, representa cerca de 5% da matriz energética e 3% da matriz elétrica, sendo um recurso finito e que pode se esgotar com o passar dos anos.</p>
+          <img src="mineral.png" alt="Tabela de características energéticas" class="img-mineral">
+        </div>
+        <div class="card">
+          <h3>EÓLICA</h3>
+          <p>A energia eólica é uma forma de energia renovável que aproveita a força do vento para gerar eletricidade. Esta energia é convertida em energia elétrica através de aerogeradores, que são estruturas com hélices que giram com o vento, impulsionando um sistema de geração de energia. Limpa e crescente no Nordeste.</p>
+          <img src="eolica.png" alt="Tabela de características energéticas" class="img-eolica">
+        </div>
+      </div>
+      <br>
+    </section>
+    <br>
+    <h2>Gráfico Estatístico</h2>
+    <p>O gráfico apresentado mostra a matriz energética do Brasil, ou seja, a participação de cada fonte de energia no
+      total de energia consumida no país. De acordo com os dados, a principal fonte de energia utilizada é o petróleo e
+      seus derivados, que correspondem a 35,7% da matriz energética brasileira. Essa é uma fonte não-renovável e muito
+      utilizada nos transportes e na indústria.
+      Em segundo lugar, destacam-se os derivados da cana-de-açúcar, com 15,4%, uma fonte renovável bastante presente no
+      Brasil, principalmente na produção de etanol. A energia hidráulica aparece logo depois, com 12,5%, sendo uma das
+      principais fontes de eletricidade do país, por meio das hidrelétricas. Outras fontes são o gás natural (10,5%) e a
+      lenha e o carvão vegetal (9,0%). Além disso, há participação de outras fontes renováveis (7,0%), carvão mineral
+      (4,6%), energia eólica e solar (3,5%), energia nuclear (1,3%) e outras fontes não-renováveis (0,6%).</p>
+     <br>
+      <p>Esses dados mostram que, apesar da presença significativa de fontes renováveis, o Brasil ainda depende em grande
+        parte de fontes não-renováveis, como o petróleo e o gás natural. No entanto, observa-se o crescimento de fontes
+        alternativas e mais sustentáveis, como a solar e a eólica, o que aponta para um possível avanço em direção a uma
+        matriz mais limpa no futuro.</p>
+
+    <div class="grafico">
+      <h2>Fontes de Energia no Brasil (%)</2>
+      <canvas id="energiaChart"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+    <br>
+  
+    <section id="caracteristicas">
+      <br>
+      <h2>Características das Matrizes</h2>
+      <p>No caso do Brasil, a matriz energética apresenta-se como uma das mais renováveis do mundo, com expressiva
+        participação de fontes como a energia hidráulica e a biomassa. Ainda assim, a utilização de combustíveis fósseis
+        permanece significativa, especialmente nos setores de transporte e geração de derivados do petróleo.</p>
+      As matrizes energéticas são compostas por diversas fontes, podendo incluir tanto recursos renováveis, como solar,
+      eólica, hidráulica e biomassa, quanto não renováveis, como petróleo, carvão, gás natural e energia nuclear. A
+      composição dessas matrizes varia conforme os recursos disponíveis e as prioridades de cada país. Enquanto o Brasil
+      se destaca por sua forte presença de fontes renováveis, outros países ainda mantêm grande dependência de
+      combustíveis fósseis. Apesar do crescimento das energias limpas, o petróleo e o carvão continuam sendo amplamente
+      utilizados, especialmente em nações desenvolvidas. Nesse contexto, a eficiência energética torna-se essencial,
+      promovendo o uso racional da energia e contribuindo para a redução dos impactos ambientais. A matriz energética
+      brasileira é notável pela predominância de fontes renováveis, principalmente a energia hidráulica e a biomassa,
+      embora os combustíveis fósseis ainda desempenhem papel importante. Já a matriz elétrica do país apresenta-se como
+      ainda mais limpa, com destaque para a geração hidroelétrica.
+
+    </section>
+
+    <section id="comercio">
+      <h2>Exportações e Importações</h2>
+      <p>O Brasil possui uma matriz energética diversificada, com forte presença de fontes renováveis. No entanto, o
+        país ainda realiza importações significativas de combustíveis fósseis, como o gás natural e derivados de
+        petróleo, especialmente para suprir demandas específicas do setor de transportes e da indústria. Ao mesmo tempo,
+        o Brasil é exportador de petróleo bruto, etanol e energia elétrica em determinadas regiões de fronteira, como
+        para a Argentina e o Paraguai (no caso da Usina de Itaipu). Essa relação entre exportações e importações reflete
+        tanto os avanços quanto os desafios na autossuficiência energética brasileira.</p>
+    </section>
+
+    <section id="petroleo">
+      <h2>Cadeia Produtiva da Energia no Brasil</h2>
+      <p>A cadeia produtiva da energia no Brasil é composta por várias etapas: exploração, produção, transformação,
+        distribuição e consumo final. No setor de petróleo, por exemplo, essa cadeia inclui desde a extração em campos
+        terrestres ou marítimos (como o pré-sal), o refino nas refinarias nacionais, até a distribuição para os postos
+        de combustíveis. No caso das fontes renováveis, como a biomassa e a energia hidráulica, há também uma complexa
+        rede produtiva, que envolve desde a produção agrícola (como a cana-de-açúcar para o etanol), a geração de
+        energia nas usinas e a transmissão até os centros consumidores.</p>
+    </section>
+<br>
+    <h2>Narrativa: O Que são Matrizes Energéticas?</h2>
+    <br>
+    <audio controls>
+      <source src="Maria e Ana.m4a" type="audio/mpeg">
+    </audio>
+    <h5>Elaborado por: Maria Eduarda de Andrade.
+      <h5>Realização: Maria Eduarda de Andrade e Ana Lívia Domingas. </h5>
+<br>
+
+    <section id="solucoes">
+      <h2>Soluções Sustentáveis</h2>
+      <ul>
+        <h3>Energia</h3>
+        <p>Promover o uso de fontes renováveis, como solar, eólica, hidráulica e biomassa, é essencial para reduzir os
+          impactos ambientais da geração de energia e diminuir a dependência de combustíveis fósseis, mais poluentes e
+          finitos.</p>
+        <h3> Eficiência Energética</h3>
+        <p>Trata-se de utilizar a energia de forma mais racional, com equipamentos e sistemas modernos que consomem
+          menos, resultando em economia e menor impacto ambiental.</p>
+        <h3>Mobilidade Sustentável</h3>
+        <p>Visa reduzir a poluição e o trânsito urbano por meio do uso de veículos elétricos, transporte público
+          eficiente e o incentivo ao uso de bicicletas e formas alternativas de locomoção.</p>
+        <h3>Gestão de Resíduos</h3>
+        <p>Inclui ações como reciclagem, compostagem e reaproveitamento de materiais, com o objetivo de diminuir a
+          quantidade de lixo nos aterros e preservar os recursos naturais.</p>
+        <h3>Preservação Ambiental</h3>
+        <p>Envolve a proteção de florestas, rios e biodiversidade, além de práticas como o reflorestamento e o combate
+          ao desmatamento, para garantir o equilíbrio dos ecossistemas.</p>
+      </ul>
+    </section>
+
+    <main class="container">
+      <section id="introducao">
+        <h2>CADEIA PRODUTIVA</h2>
+        <img src="producao.png" alt="contexto de produção" class="img-producao">
+        <p>A cadeia produtiva é o conjunto de processos e etapas interligadas que envolvem a produção de um bem ou
+          serviço, desde a extração ou produção da matéria-prima até a entrega do produto final ao consumidor. Cada
+          etapa dessa cadeia contribui para agregar valor ao produto, envolvendo diferentes setores da economia, como a
+          agricultura, a indústria, os serviços de transporte, a comercialização e o consumo final. </h2>
+      </section>
+      <br>
+      <img src="cadeiaprodutiva.png" alt="Tabela de características energéticas" class="img-responsive">
+      <br>
+      <p>A cadeia produtiva é o conjunto de etapas que envolvem a produção de um bem, desde a obtenção da matéria-prima
+        até a chegada do produto final ao consumidor. Ela envolve diversos participantes e processos organizados de
+        forma sequencial.
+        Entre os principais participantes de uma cadeia produtiva, estão: fornecedores de matérias-primas, fabricantes,
+        distribuidores, varejistas e/ou atacadistas e os consumidores.</p>
+        <br>
+      <h3>As Etapas da Cadeia Produtiva Incluem:</h3>
+
+      <ol>
+        <li>Obtenção de matéria-prima: é a fase inicial, onde se extraem os recursos naturais por meio da agropecuária
+          ou do extrativismo.</li>
+        <br>
+        <li>Transformação da matéria-prima: ocorre o beneficiamento ou industrialização, onde a matéria-prima é
+          transformada em produtos ou componentes.</li>
+        <br>
+        <li>Distribuição da matéria-prima: envolve o transporte e a logística necessária para levar os produtos até os
+          pontos de venda.</li>
+        <br>
+        <li>Produto final: é o resultado de todas as etapas anteriores, pronto para ser consumido pelo público.</li>
+      </ol>
+      <br>
+      <p>A cadeia produtiva é extremamente importante porque organiza de forma estruturada todas as etapas envolvidas na produção de bens, desde a obtenção da matéria-prima até a entrega do produto final ao consumidor. Essa organização facilita o planejamento, a especialização do trabalho e o controle da qualidade em cada fase. Além disso, gera empregos em diversos setores como agricultura, indústria, transporte e comércio. Outro ponto relevante é a agregação de valor: ao transformar matérias-primas em produtos acabados, aumenta-se seu valor econômico. </p>
+      <br>
+      <section id="fontes">
+        <h2>Referências Utilizadas</h2>
+        <ul>
+          <li><a href="https://www.epe.gov.br" target="_blank">Empresa de Pesquisa Energética (EPE)</a></li>
+          <li><a href="https://www.aneel.gov.br" target="_blank">Agência Nacional de Energia Elétrica (ANEEL)</a></li>
+          <li><a href="https://www.gov.br/mme" target="_blank">Ministério de Minas e Energia (MME)</a></li>
+          <li><a href="https://www.gov.br/anp" target="_blank">Agência Nacional do Petróleo, Gás Natural e
+              Biocombustíveis (ANP)</a></li>
+          <li><a href="https://www.ibge.gov.br" target="_blank">Instituto Brasileiro de Geografia e Estatística
+              (IBGE)</a></li>
+          <li><a href="https://fgvenergia.fgv.br" target="_blank">FGV Energia</a></li>
+          <li><a href="https://www.iea.org" target="_blank">Agência Internacional de Energia (IEA)</a></li>
+          <li><a href="https://www.brasil2050.gov.br" target="_blank">Plataforma Brasil 2050 - Sustentabilidade e
+              Energia</a></li>
+        </ul>
+      </section>
+    </main>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  
+</body>
+
+</html>

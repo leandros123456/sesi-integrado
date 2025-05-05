@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentos Comprobatórios</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #f5f0e6;
+      margin: 0;
+      color: #3a2f24;
+    }
+
+    header {
+      background-color: #6b4c3b;
+      color: #fff8e7;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .botao-voltar {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff8e7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .botao-voltar:hover {
+      color: #d2b48c;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1,
+    h2 {
+      color: #e6c1a9;
+      font-size: 28px;
+      margin-top: 40px;
+    }
+
+    .galeria {
+      margin-top: 20px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .grid img,
+    .grid video,
+    .grid iframe {
+      width: 300px;
+      border-radius: 10px;
+      border: 2px solid #dcc8ae;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .grid img:hover,
+    .grid video:hover,
+    .grid iframe:hover {
+      transform: scale(1.03);
+      border-color: #a0522d;
+    }
+
+    iframe {
+      height: 170px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      color: #7a6b5b;
+    }
+  </style>
+</head>
+
+<body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <header>
+    <h1>Documentos Comprobatórios</h1>
+    <a href="his.html" class="botao-voltar">← Voltar</a>
+  </header>
+
+  <div class="container galeria">
+    <h2>Fotos</h2>
+    <div class="grid">
+      <img src="resitencia.webp" alt="Resistência">
+      <img src="tropicalia.png" alt="Tropicália">
+      <img src="radio nacioal.webp" alt="Rádio Nacional">
+      <img src="chico buarque.webp" alt="Chico Buarque">
+      <img src="censura.png" alt="Censura">
+      <img src="ato instituconal.jpg" alt="Ato Institucional">
+      <img src="1968 - Lanzamiento Tropicalia (1).png" alt="Panis et Circenses">
+      <img src="O-sociologo-Florestan-Fernandes-em-ato-de-rua.webp" alt="Florestan Fernandes">
+      <img src="6---Fotografia-que-estampa-a-capa-de-Tropicalia-ou-Panis-et-Circenses_-1969.webp" alt="Capa Tropicalia">
+    </div>
+
+    <h2>Vídeos</h2>
+    <div class="grid">
+      <iframe src="https://www.youtube.com/embed/ar6H80t67Ag?si=CYJL3pVasboBN65C" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/ZgGgHn3ibCA?si=cDRwAa4LMzi-eVp5" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/eMESbjT8QG0?si=3YpInBXMG-ROb2-r" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <p>Lais&copy; - Modernismo</p>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemática: Imposto e juros</title>
+    <script>
+        const TAX_TABLE = [
+            [2259.20, 0, 0],
+            [2826.65, 0.075, 169.44],
+            [3751.05, 0.15, 381.44],
+            [4664.68, 0.225, 662.77],
+            [Infinity, 0.275, 896],
+        ];
+
+        const calcular = () => {
+            ;
+            const base = document.getElementById('rawIncome').value - (document.getElementById('discount').value ?? 0);
+            console.log(base);
+            const taxes = TAX_TABLE.find(v => base <= v[0]);
+            console.log(taxes);
+            const result = base * taxes[1] - taxes[2];
+            document.getElementById('result').value = `R$ ${result.toFixed(2)}`;
+        }
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    <style>
+        nav {
+            height: 2em;
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0 1em;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p,
+        ul,
+        li {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="number"],
+        input[disabled] {
+            padding: 0.5em;
+            margin: 0.3em 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 0.5em;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        audio {
+            margin-top: 1em;
+            width: 100%;
+        }
+
+        section {
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 2px solid #ccc;
+            margin-left: 15vw;
+            margin-right: 15vw;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: red;
+            padding: 0;
+            width: 100vw;
+            height: 2em;
+            margin: 0;
+        }
+
+        footer p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+    <img src="mat_banner.png" style="width: 100vw; margin: 0; padding: 0;">
+    <nav>
+        <a href="#definicao">Definição</a>
+        <a href="#tabela">Tabela 2024</a>
+        <a href="#calc">Calculadora de imposto</a>
+        <a href="#problema">Podcast</a>
+        <a href="#isencao">Isenção</a>
+        <a href="#e">O número \(e\)</a>
+    </nav>
+    </nav>
+    <section id="definicao">
+        <h1>Imposto de renda</h1>
+        <p>O imposto de renda é uma taxa imposta pelos indivíduos ou entidades denominadas contribuintes em razão da
+            renda
+            ou lucro obtido por eles. Geralmente, é calculado por meio do produto entre a taxa tributária correspondente
+            à
+            faixa de renda e a base do cálculo como a entrada bruta com o desconto de certas especificidades que
+            incluem:
+        </p>
+        <ul>
+            <li>INSS (Conforme alíquota)</li>
+            <li>Pensão alimentícia (Ratificada por decisão judicial)</li>
+            <li>Dependentes (R$ 2.275,08 ao ano)</li>
+            <li>Despesas médicas próprias ou de dependentes como médicos, dentistas, psicólogos, fisioterapeutas,
+                fonoaudiólogos, terapeutas ocupacionais, hospitais, exames laboratoriais, serviços radiológicos,
+                aparelhos
+                ortopédicos e próteses ortopédicas e dentárias, exceto se forem ressarcidas</li>
+        </ul>
+        <p>Além disso, existem as deduções "incentivadas", as quais são feitas a fundos e projetos previamente aprovados
+            pelo Poder Público para poderem ser abatidas na declaração de imposto de renda de pessoas físicas e
+            jurídicas.
+            De maneira prática, isto é o equivalente a doar parte do imposto de renda cobrado para algum fundo. Entre os
+            fundos aprovados pelo Poder Público, incluem-se:</p>
+        <ul>
+            <li>Fundos dos Direitos da Criança e do Adolescente (Nacional, Distrital, estaduais ou municipais);</li>
+            <li>Fundos do Idoso (Nacional, Distrital, estaduais ou municipais);</li>
+            <li>Projetos aprovados no âmbito das leis de incentivo à cultura, ao esporte e à atividade audiovisual;</li>
+            <li>Projetos aprovados no âmbito do Programa Nacional de Apoio à Atenção da Saúde da Pessoa com Deficiência
+                (Pronas/PCD) e do Programa Nacional de Apoio à Atenção Oncológica (Pronon), do Ministério da Saúde;</li>
+            <li>Projetos que estimulem a cadeia produtiva de reciclagem.</li>
+        </ul>
+        <p>No que diz respeito às doações realizadas em 2023 para serem abatidas na declaração deste ano, o limite de
+            dedução é de 6% do IR devido, caso não sejam incluídas doações a projetos enquadrados na Lei de Incentivo ao
+            Desporto ("Lei do Esporte"), ou 7% do IR devido, caso sejam incluídas estas últimas, uma das novidades
+            introduzidas no IR 2024.</p>
+        <p>No que diz respeito às doações para projetos aprovados nos âmbitos do Pronas/PCD e do Pronon, os limites de
+            dedução são de 1% para cada programa, sem prejuízo das outras doações incentivadas.</p>
+        <p>Outra maneira pela qual pode ser deduzido o valor, é pela aplicação do desconto simplificado, em que se
+            retira
+            20% do valor bruto.</p>
+
+    </section>
+    <section id="tabela">
+        <h1>Tabela para taxas do IR de 2024</h1>
+        <p>As taxas respectivas a serem descontadas em 2024 estão listadas na seguinte tabela, uma vez que ainda não foi
+            publicado os valores deste ano:</p>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Base de Cálculo</th>
+                    <th>Alíquota</th>
+                    <th>Parcela a Deduzir do IR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Até R$ 2.259,20</td>
+                    <td>Isento</td>
+                    <td>Isento</td>
+                </tr>
+                <tr>
+                    <td>De R$ 2.259,21 até R$ 2.826,65</td>
+                    <td>7,5%</td>
+                    <td>R$ 169,44</td>
+                </tr>
+                <tr>
+                    <td>De R$ 2.826,66 até R$ 3.751,05</td>
+                    <td>15%</td>
+                    <td>R$ 381,44</td>
+                </tr>
+                <tr>
+                    <td>De R$ 3.751,06 até R$ 4.664,68</td>
+                    <td>22,5%</td>
+                    <td>R$ 662,77</td>
+                </tr>
+                <tr>
+                    <td>Acima de R$ 4.664,68</td>
+                    <td>27,5%</td>
+                    <td>R$ 896,00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section id="isencao">
+        <h1>Critérios para isenção</h1>
+        <p>Além disso, existem alguns critérios à eligibilidade para isenção, tais como:</p>
+        <ul>
+            <li>Tiveram receita bruta referente à atividade rural em valor superior a R$ 169.440,00;</li>
+            <li>Receberam rendimentos isentos, não tributáveis ou tributados exclusivamente na fonte, cuja soma tenha
+                sido
+                superior a R$ 200 mil. Ex.: rendimentos de aplicações financeiras, doações, heranças, partilha de
+                divórcio,
+                meação, pensão alimentícia, indenizações, dividendos e juros sobre capital próprio;</li>
+            <li>Obtiveram, em qualquer mês, ganho de capital na alienação de bens ou direitos, sujeito à incidência do
+                imposto (ainda que tenha optado por um dos casos de isenção). Ex.: venda de imóveis ou criptomoedas com
+                lucro (tenha sido este lucro tributado ou não);</li>
+            <li>Realizaram operações de alienação de ativos negociados em bolsa de valores cujo valor total no ano tenha
+                sido superior a R$ 40 mil ou, caso tenha sido inferior a esta quantia, tenham obtido ganho líquido
+                sujeito à
+                incidência de Imposto de Renda;</li>
+            <li>Pretendam compensar, no ano-calendário de 2024 ou posteriores, prejuízos com atividade rural ou
+                operações na
+                bolsa de valores de anos-calendários anteriores ou do próprio ano-calendário de 2024;</li>
+            <li>Tiveram, em 31 de dezembro, a posse ou a propriedade de bens ou direitos, inclusive terra nua, de valor
+                total superior a R$ 800 mil. Ex.: imóveis, veículos e investimentos;</li>
+            <li>Passaram à condição de residentes no Brasil em qualquer mês do ano e ainda se encontravam nessa condição
+                em
+                31 de dezembro;</li>
+            <li>Receberam do exterior rendimentos de aplicações financeiras, lucros e dividendos;</li>
+            <li>Fizeram a atualização do valor de imóvel próprio e recolheram IR diferenciado sobre o ganho de capital,
+                conforme a Lei nº 14.973/2024;</li>
+        </ul>
+    </section>
+    <section id="calc">
+        <h1>Calculadora de imposto de renda</h1>
+        <label>Salário bruto (R$): </label>
+        <input type="number" id="rawIncome"> <br>
+        <label>Descontos mensais: </label>
+        <input type="number" id="discount"> <br>
+        <label>Imposto de Renda cobrado: </label>
+        <input disabled id="result">
+        <button type="button" onclick="calcular()">Calcular</button>
+    </section>
+    <section id="podcast">
+        <h1>Podcast sobre os problemas com o imposto de renda no Brasil</h1>
+        <audio controls>
+            <source src="audio-file.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section id="e">
+        <h1>Origem do Número de Euler \( e \)</h1>
+
+        <p>
+            O número de Euler, denotado por \( e \), é uma constante matemática irracional
+            que apareceu naturalmente quando Bernoulli estudava as aplicações de juros compostos e sua intrínseca
+            relação
+            com o cálculo.
+        </p>
+
+        <h2>1. Definição a partir de juros compostos</h2>
+        <p>
+            Suponha que você invista 1 unidade monetária a uma taxa de 100% ao ano, com capitalização \( n \) vezes por
+            ano.
+            O valor após 1 ano será:
+        </p>
+
+        <p>
+            \[
+            \left(1 + \frac{1}{n}\right)^n
+            \]
+        </p>
+
+        <p>
+            À medida que \( n \) tende ao infinito (capitalização contínua), esse valor se aproxima de um limite:
+        </p>
+
+        <p>
+            \[
+            e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n
+            \]
+        </p>
+
+        <h2>2. Série de Taylor da função exponencial</h2>
+        <p>
+            Outra forma de definir \( e \) é através da expansão em série da função exponencial \( e^x \) no ponto \( x
+            = 1
+            \):
+        </p>
+
+        <p>
+            \[
+            e = \sum_{n=0}^{\infty} \frac{1}{n!} = 1 + \frac{1}{1} + \frac{1}{2!} + \frac{1}{3!} + \cdots
+            \]
+        </p>
+
+        <h2>3. Valor aproximado</h2>
+        <p>
+            O valor de \( e \) é aproximadamente:
+        </p>
+
+        <p>
+            \[
+            e \approx 2.718281828...
+            \]
+        </p>
+
+        <p>
+            Essa constante é fundamental em diversas áreas da matemática, incluindo cálculo diferencial e integral,
+            estatística, probabilidade e teoria dos números.
+        </p>
+    </section>
+    <footer>
+        <p>Leandro - Matemática</p>
+    </footer>
+</body>
+
+</html>
