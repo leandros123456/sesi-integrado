@@ -103,6 +103,38 @@
                 padding: 20px 10px;
             }
         }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .img-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .img-gallery img {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .podcast {
+    background-color: #e0ecf9;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.podcast h3 {
+    color: #0664bd;
+    margin-bottom: 15px;
+}
     </style>
 </head>
 
@@ -152,6 +184,15 @@
             <li>Jorge de Lima: Essa Negra Fulô</li>
         </ol>
 
+        <section id="imagens">
+            <h3>Poesias</h3>
+            <div class="img-gallery">
+                <img src="drummong.png" alt="Platelminto 1">
+                <img src="mistori.png" alt="Platelminto 2">
+                <img src="batuque.png" alt="Platelminto 3">
+            </div>
+        </section>
+
         <h3>Prosa e seus Artistas</h3>
         <p>A principal ênfase da literatura ficcional foram os romances de temática regional e urbana.
             Motivada por questões sociais, a prosa dessa etapa se afinou para uma linguagem informal e regional. Portanto, ela apresentou a realidade de várias regiões do país, seja no campo ou na cidade.
@@ -165,11 +206,31 @@
         </ol>
     </section>
 
+    <section id="imagens">
+        <h3>Prosas</h3>
+        <div class="img-gallery">
+            <img src="bagaceira.png" alt="Platelminto 1">
+            <img src="angustia.png" alt="Platelminto 2">
+            <img src="fogomorto.png" alt="Platelminto 3">
+        </div>
+    </section>
+
     <section id="questoes" class="questions">
         <h3>TEMAS PARA ENEM</h3>
         <h4>1. Identidade nacional, às injustiças sociais e às desigualdades</h4>
         <h4>2. A crítica social e a busca por identidade nacional na literatura modernista de 1930</h4>
     </section>
+
+    <section class="podcast">
+        <h3>Ouça o Podcast</h3>
+        <audio controls>
+            <source src="PORTUGUES MODERNISMO.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </section>
+    
+
+
 
     <footer>
         <p>Ana Livía&copy; - Modernismo</p>
