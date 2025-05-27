@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biologia - Platelmintos</title>
+  <style>
+
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: .4 }
+  to { opacity: 1 }
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f6f2;
+      color: #333;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #331e1e;
+    }
+
+    header h2 {
+      font-weight: normal;
+      color: #664d4d;
+    }
+
+    nav {
+      background-color: #a4c49a;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h3 {
+      color: #2f4f2f;
+    }
+
+    .video-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+
+
+    .questions {
+      background-color: #e0f2e9;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    .questions h4 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #a4c49a;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    #podcast {
+      background-color: #eaf5e3;
+      /* tom suave de verde */
+      border: 2px solid #91b775;
+      /* borda sutil para destacar a caixa */
+      border-radius: 12px;
+      padding: 30px 20px;
+      max-width: 700px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    #podcast h3 {
+      color: #2f4f2f;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    #podcast audio {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 5px;
+    }
+
+    .mapa-mental {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .mapa-mental img {
+      width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .mapa-mental-texto {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .carousel-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel-container::-webkit-scrollbar-thumb {
+      background-color: #a4c49a;
+      border-radius: 4px;
+    }
+
+    .carousel-track img {
+      display: inline-block;
+      width: 400px;
+      /* Largura fixa */
+      height: 400px;
+      /* Altura fixa */
+      margin-right: 15px;
+      border-radius: 10px;
+      object-fit: cover;
+      /* Preenche mantendo proporção, pode cortar bordas */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #caracteristicas {
+  padding: 40px 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #eafaf1; /* fundo verde claro */
+  border: 2px solid #2ecc71; /* borda verde */
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.card p {
+  color: #555;
+}
+
+
+
+
+  </style>
+  <script>
+    let slideIndex = 1;
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+    
+      if (n > slides.length) { slideIndex = 1 }    
+      if (n < 1) { slideIndex = slides.length }
+    
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+    
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlides(1);
+    });
+    </script>
+    
+</head>
+
+<body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <img src="bio.png" width="100%" height="auto">
+
+  <nav>
+    <a href="#podcast">Podcast</a>
+    <a href="#imagens">Imagens</a>
+    <a href="#questoes">Questões</a>
+  </nav>
+
+  <section id="conteudo">
+    <h2>O que são Platelmintos?</h2>
+    <p>Platelmintos são vermes do filo Platyhelminthes com corpo achatado e delgado. Muitas espécies são de vida livre,
+      encontradas em ambientes aquáticos ou úmidos terrestres, enquanto outras são parasitas que se instalam em diversos
+      hospedeiros.</p>
+      
+    <br>
+
+    <h2>Características:</h2>
+
+    <section id="caracteristicas">
+      <div class="cards-container">
+        <div class="card">
+          <h3>Estrutura</h3>
+          <p>Esses animais possuem três camadas embrionárias: ectoderme, mesoderme e endoderme. A presença do mesoderma possibilita o desenvolvimento de órgãos e sistemas, como o muscular, excretor e reprodutor. Na região da cabeça, observam-se estruturas sensoriais que auxiliam na interação com o ambiente.</p>
+        </div>
+    
+        <div class="card">
+          <h3>Digestão</h3>
+          <p>O sistema digestivo é incompleto, com uma única abertura: a boca. Por ela, o alimento entra e os resíduos são eliminados. A digestão é, em parte, extracelular e intracelular.</p>
+        </div>
+    
+        <div class="card">
+          <h3>Reprodução</h3>
+          <p>Platelmintos apresentam reprodução sexuada e assexuada, a depender da espécie. Esse padrão também aparece em outros filos de vermes, como anelídeos e nematelmintos.</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <h2>Turbellaria – planárias</h2>
+    <div class="mapa-mental">
+      <img src="planárias.png" alt="Planária - Turbellaria">
+      <div class="mapa-mental-texto">
+        <p>
+          Planárias são platelmintos de vida livre, encontrados em ambientes aquáticos e locais terrestres úmidos. A
+          Geoplana, por exemplo, pode alcançar até 20 cm e costuma ser confundida com lesmas. Elas se reproduzem de
+          forma assexuada, por fissão. Quando crescem muito, fixam a parte anterior do corpo e se dividem em dois,
+          originando novos indivíduos. Durante a alimentação, projetam a faringe para fora e iniciam a ingestão do
+          alimento; os nutrientes são distribuídos por um intestino com ramificações.
+        </p>
+      </div>
+    </div>
+    
+
+    <br>
+
+    <h2>Cestoda – tênia</h2>
+    <div class="mapa-mental">
+      <img src="cestoda.png" alt="Planária - Turbellaria">
+      <div class="mapa-mental-texto">
+        <p>A tênia, conhecida como “solitária”, é um platelminto parasita do intestino humano. Pode atingir até 15
+          metros de comprimento. Sem sistema digestivo, absorve nutrientes já digeridos pelo hospedeiro através da
+          superfície corporal. Seus proglotes grávidos são eliminados nas fezes, liberando ovos no ambiente. A Taenia
+          saginata usa o boi como hospedeiro intermediário, enquanto a Taenia solium utiliza o porco. A ingestão de
+          carne mal passada ou crua é a principal forma de contaminação. A Taenia solium é mais comum no Brasil. A
+          cisticercose, causada pelas larvas, afeta tecidos humanos, mas é menos frequente.</p>
+      </div>
+    </div>
+    <br>
+    <h2>Trematoda – esquistossomose</h2>
+    <div class="mapa-mental">
+      <img src="trematoda.png" alt="Planária - Turbellaria">
+      <div class="mapa-mental-texto">
+        <p>Essa classe de platelmintos inclui parasitas causadores da esquistossomose ou barriga d’água. Apresentam
+          dimorfismo sexual e têm como hospedeiro definitivo o ser humano. O ciclo envolve caramujos do gênero
+          Biomphalaria como hospedeiros intermediários. Os miracídios penetram nos caramujos e se transformam em
+          cercárias, que posteriormente invadem o corpo humano pela pele. No corpo, os vermes adultos se alojam nos
+          vasos sanguíneos e seus ovos são eliminados nas fezes. O acúmulo de ovos no fígado e o aumento da pressão nos
+          vasos causam aumento do abdômen.</p>
+      </div>
+    </div>
+    <br>
+    <h2>Monogenea</h2>
+    <div class="mapa-mental">
+      <img src="monogenea.png" alt="Planária - Turbellaria">
+      <div class="mapa-mental-texto">
+        <p>Monogeneas são ectoparasitas encontrados principalmente em peixes e anfíbios, aderindo à pele, guelras,
+          nadadeiras ou boca. Alguns podem ser encontrados na bexiga urinária de anfíbios ou até nos olhos de
+          hipopótamos. Têm corpo achatado e medem de 30 μm a 6 mm, podendo chegar a 3 cm. Utilizam estruturas chamadas
+          haptores, compostas por ganchos e ventosas, para fixação. Diferente dos trematódeos, completam seu ciclo de
+          vida em um único hospedeiro, sem fases larvais em diferentes animais.</p>
+      </div>
+    </div>
+    <br>
+    <h2>Sistema nervoso dos platelmintos</h2>
+    <p>Os platelmintos apresentam um sistema nervoso primitivo, mas eficaz. Dois gânglios cerebrais na cabeça se
+      conectam a cordões nervosos longitudinais, interligados por nervos transversais. Esse arranjo proporciona
+      respostas rápidas e coordenação dos movimentos. Algumas espécies, como
+
+
+    <h2>A importância na Biodiversidade</h2>
+    <p>Os platelmintos, apesar de pequenos e muitas vezes invisíveis a olho nu, desempenham um papel fundamental na
+      biodiversidade, atuando como decompositores, predadores e, em alguns casos, como parasitas. Sua importância se
+      estende desde a reciclagem de nutrientes nos ecossistemas até o controle de populações de outros organismos, como
+      mosquitos.</p>
+
+
+  </section>
+
+  <section id="podcast" class="video-container">
+    <h3>Cai no Vestibular</h3>
+    <audio controls>
+      <source src="verri.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </section>
+
+  <section id="imagens">
+    <h3>Os Platelmintos</h3>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <img src="imagem1.png" style="height: 800px; width: 800px;">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="imagem2.png" style="height: 800px; width: 800px;">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="imagem3.png" style="height: 800px; width: 800px;">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="planaria_platelminto.jpg" style="height: 800px; width: 800px;">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="platelmintos.jpeg" style="height: 800px; width: 800px;">
+      </div>
+
+      <!-- Next/prev buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <!-- Dots (navigation) -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+  </section>
+
+
+  <!DOCTYPE html>
+  <html lang="pt-BR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perguntas Sobre:</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f7;
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        color: #2c3e50;
+      }
+
+      .content,
+      .quiz-container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+
+      .question h3 {
+        color: #34495e;
+      }
+
+      .options label {
+        display: block;
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+
+      .options input[type="radio"] {
+        margin-right: 8px;
+      }
+
+      .correct {
+        color: green;
+      }
+
+      .incorrect {
+        color: red;
+      }
+
+      #submit {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #submit:hover {
+        background: #2980b9;
+      }
+
+      #result {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Perguntas sobre os Platelmintos:</h1>
+
+    <section id="questoes">
+      <div class="quiz-container" id="quiz"></div>
+      <button id="submit">Enviar Respostas</button>
+      <div id="result"></div>
+    </section>
+    <script>
+      const quizData = [
+        {
+          question: "1. O que são platelmintos?",
+          options: [
+            "A) Fungos unicelulares",
+            "B) Vertebrados marinhos",
+            "C) Vermes de corpo achatado dorsoventralmente",
+            "D) Insetos com asas membranosas"
+          ],
+          correct: 2
+        },
+        {
+          question: "2. Qual das alternativas abaixo representa um platelminto parasita do homem?",
+          options: [
+            "A) Planária",
+            "B) Lombriga",
+            "C) Tênia",
+            "D) Ancilóstomo"
+          ],
+          correct: 2
+        },
+        {
+          question: "3. A planária é um exemplo de platelminto:",
+          options: [
+            "A) Parasita",
+            "B) Livre-vivente",
+            "C) Com asas",
+            "D) Venenoso"
+          ],
+          correct: 1
+        },
+        {
+          question: "4. Qual das características é típica dos platelmintos?",
+          options: [
+            "A) Corpo cilíndrico e segmentado",
+            "B) Presença de sistema circulatório fechado",
+            "C) Corpo achatado e ausência de celoma",
+            "D) Exoesqueleto quitinoso"
+          ],
+          correct: 2
+        },
+        {
+          question: "5. Como ocorre a reprodução da tênia?",
+          options: [
+            "A) Apenas assexuada",
+            "B) Apenas sexuada com fecundação externa",
+            "C) Sexuada com autofecundação",
+            "D) Brotamento"
+          ],
+          correct: 2
+        },
+        {
+          question: "6. Qual doença é causada por platelmintos e relacionada ao contato com água doce contaminada?",
+          options: [
+            "A) Ascaridíase",
+            "B) Esquistossomose",
+            "C) Teníase",
+            "D) Filariose"
+          ],
+          correct: 1
+        },
+        {
+          question: "7. O hospedeiro intermediário do Schistosoma mansoni é:",
+          options: [
+            "A) Mosquito",
+            "B) Caramujo",
+            "C) Humano",
+            "D) Peixe"
+          ],
+          correct: 1
+        },
+        {
+          question: "8. A teníase pode ser evitada por:",
+          options: [
+            "A) Lavar bem frutas",
+            "B) Tomar vacina contra vírus",
+            "C) Comer carne bem cozida",
+            "D) Tomar antibióticos"
+          ],
+          correct: 2
+        },
+        {
+          question: "9. Os platelmintos possuem sistema digestório:",
+          options: [
+            "A) Incompleto (apenas boca)",
+            "B) Completo (boca e ânus)",
+            "C) Ausente",
+            "D) Externo"
+          ],
+          correct: 0
+        },
+        {
+          question: "10. A esquistossomose é também conhecida como:",
+          options: [
+            "A) Doença do sono",
+            "B) Barriga d'água",
+            "C) Pé de elefante",
+            "D) Doença de Chagas"
+          ],
+          correct: 1
+        }
+      ];
+
+      const quizContainer = document.getElementById("quiz");
+
+      quizData.forEach((q, i) => {
+        const div = document.createElement("div");
+        div.classList.add("question");
+        div.innerHTML = `
+        <h3>${q.question}</h3>
+        <div class="options">
+          ${q.options.map((opt, idx) => `
+            <label>
+              <input type="radio" name="question${i}" value="${idx}"> ${opt}
+            </label>
+          `).join('')}
+        </div>
+      `;
+        quizContainer.appendChild(div);
+      });
+
+      document.getElementById("submit").addEventListener("click", () => {
+        let score = 0;
+        quizData.forEach((q, i) => {
+          const options = document.getElementsByName(`question${i}`);
+          let selected = -1;
+          for (let opt of options) {
+            if (opt.checked) selected = parseInt(opt.value);
+          }
+          const labels = options[0].closest(".options").querySelectorAll("label");
+          labels.forEach((label, idx) => {
+            label.classList.remove("correct", "incorrect");
+            if (idx === q.correct) label.classList.add("correct");
+            else if (idx === selected && selected !== q.correct) label.classList.add("incorrect");
+          });
+          if (selected === q.correct) score++;
+        });
+
+        document.getElementById("result").innerText = `Você acertou ${score} de ${quizData.length} perguntas!`;
+      });
+    </script>
+
+
+    <footer>
+      <p>Maria Verri - Biologia - Platelmintos</p>
+    </footer>
+  </body>
+
+  </html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <br>
+  <title>Matrizes Energéticas - Geografia</title>
+  <style>
+    :root {
+
+      --light: white;
+      --dark: #1b1b1b;
+    }
+
+    /* === Layout Base === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* === Gráfico === */
+    .grafico {
+      text-align: center;
+      max-width: 650px;
+      margin: 19px auto;
+      box-shadow: 0 0 8px rgba(199, 192, 192, 0.226);
+    }
+
+    /* === Navbar === */
+    .navbar {
+      background: #e0e0e0;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .navbar a {
+      margin: 0 15px;
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* === Hero Section === */
+    .hero {
+      background-image: url('banner.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      height: 400px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* === Tipografia === */
+    h1,
+    h2,
+    h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* === Grid e Cards === */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    /* === Imagens === */
+    .img-responsive,
+    .img-hidreletrica,
+    .img-solar,
+    .img-eolica,
+    .img-mineral,
+    .img-producao {
+      display: block;
+      height: auto;
+      margin: 30px auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .img-responsivp {
+      width: 50%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .img-responsivp {
+      width: 50%;
+
+    }
+
+    .img-hidreletrica,
+    .img-solar {
+      width: 80%;
+    }
+
+    .img-eolica {
+      width: 52%;
+    }
+
+    .img-mineral {
+      width: 100%;
+    }
+
+    .img-producao {
+      width: 70%;
+    }
+
+    /* === Rodapé === */
+    .rodape {
+      background-color: #fa671df3;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      color: #ffffff;
+
+    }
+
+    #sobre-site {
+      background-color: #f8d9c939;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #000000;
+      text-align: center;
+    }
+
+    #sobre-site h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    #sobre-site p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+
+      line-height: 1.5;
+    }
+
+    #sobre-site {
+      background-color: #faccb185;
+    }
+
+    .cards-resumo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .card-resumo {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      padding: 1.5rem 1rem;
+      width: 220px;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .card-resumo:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 15px rgb(0 0 0 / 0.15);
+    }
+
+    .card-resumo h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #010101;
+    }
+
+    .card-resumo p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.3;
+    }
+
+    .referencias {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    .referencias li {
+      margin-bottom: 10px;
+    }
+
+    .referencias a {
+      color: #2a6ecf;
+      text-decoration: none;
+    }
+
+    .referencias a:hover {
+      text-decoration: underline;
+    }
+
+    #tipos {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    #tipos h2 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    #tipos {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    #tipos h2 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 colunas fixas */
+      gap: 15px;
+    }
+
+    .card {
+      background: #a029291d;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 4px 10px rgba(28, 28, 28, 0.208);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(53, 53, 53, 0.12);
+    }
+
+    .card h3 {
+      color: rgb(66, 161, 96);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      flex-grow: 1;
+      line-height: 1.3;
+      color: #071312;
+    }
+
+
+    .meio {
+      margin-left: 25%;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addeventListener('DOMContentLoaded', () => {
+
+      const ctx = document.getElementById('energiaChart').getContext('2d');
+
+      new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: [
+            'Petróleo e Derivados',
+            'Derivados da Cana de Açúcar',
+            'Hidráulica',
+            'Gás Natural',
+            'Lenha e Carvão Vegetal',
+            'Outras Renováveis',
+            'Carvão Mineral',
+            'Eólica e Solar',
+            'Nuclear',
+            'Outras Não-Renováveis'
+          ],
+          datasets: [{
+            data: [35.7, 15.4, 12.5, 10.5, 9.0, 7.0, 4.6, 3.5, 1.3, 0.6],
+            backgroundColor: [
+              '#ff7900',
+              '#ffd700',
+              '#00c3f4',
+              '#6c8d92',
+              '#8d8d8d',
+              '#a2f52b',
+              '#c4c4c4',
+              '#f7d358',
+              '#00764b',
+              '#999999'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              position: 'right',
+            },
+            title: {
+              display: false
+            }
+          }
+        }
+      });
+    })
+  </script>
+</head>
+
+<body>
+  <header class="hero">
+
+  </header>
+  <section id="sobre-site" class="sobre-site">
+    <h2>O que você vai encontrar neste site</h2>
+    <p>Explore o universo das matrizes energéticas no Brasil, compreendendo as principais fontes de energia, suas
+      características,
+      vantagens e desafios. Navegue por informações detalhadas sobre a cadeia produtiva, exportações e importações, e
+      acompanhe dados estatísticos atualizados através de gráficos interativos.</p>
+    <div class="cards-resumo">
+      <div class="card-resumo">
+        <h3>Matrizes Energéticas</h3>
+        <p>Conheça as fontes de energia renováveis e não renováveis que formam a matriz energética brasileira, com
+          ênfase em hidrelétrica, solar, eólica e carvão mineral.</p>
+      </div>
+      <div class="card-resumo">
+        <h3>Cadeia Produtiva</h3>
+        <p>Entenda as etapas da produção de energia, desde a extração até o consumo, incluindo transformações e
+          distribuição.</p>
+      </div>
+      <div class="card-resumo">
+        <h3>Gráficos e Dados</h3>
+        <p>Acompanhe informações estatísticas visuais sobre o consumo e participação das diferentes fontes de energia no
+          país.</p>
+      </div>
+      <div class="card-resumo">
+        <h3>Exportações e Importações</h3>
+        <p>Saiba como o Brasil se posiciona no mercado internacional de energia, suas importações, exportações e os
+          impactos econômicos.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="introducao">
+      <h2>MATRIZES ENERGÉTICAS</h2>
+      <p>A matriz energética é o conjunto de todas as fontes de energia disponíveis e utilizadas por um país para
+        movimentar sua economia e atender às necessidades da população. Em outras palavras, ela representa de onde vem a
+        energia que usamos no nosso dia a dia - seja para acender uma lâmpada, abastecer um carro, produzir bens em uma
+        fábrica ou manter hospitais e escolas funcionando.
+        Cada país possui uma matriz energética própria, baseada em fatores como a disponibilidade de recursos naturais,
+        o nível de desenvolvimento tecnológico, as políticas governamentais e os investimentos realizados no setor de
+        energia. Essa matriz é formada por diversas fontes de energia, que se dividem em dois grupos principais:
+        renováveis e não renováveis.</p>
+      <img src="brasil.png" alt="Tabela de características energéticas" class="img-producao">
+    </section>
+    <br>
+    <section id="tipos">
+      <h2>Matrizes Energéticas Existentes</h2>
+      <br>
+      <div class="grid">
+        <div class="card">
+          <h3>HIDRELÉTRICA</h3>
+          <p>Principal fonte no Brasil. Renovável, mas depende da água dos rios. A energia hidrelétrica é aquela que é
+            gerada ao transformar a força da água em energia elétrica. Para aproveitar tal força, são construídas
+            grandes infraestruturas hidráulicas capazes de extrair o máximo potencial desse recurso renovável, livre de
+            emissões e que se origina na própria área.</p>
+          <img src="hidreletrica.png" alt="Hidrelétrica" class="img-hidreletrica">
+        </div>
+        <div class="card">
+          <h3>SOLAR</h3>
+          <p>Energia solar é a energia proveniente do sol, que pode ser utilizada para diversas finalidades, como gerar
+            eletricidade, aquecer água e até mesmo construir casas com maior eficiência energética. É uma fonte de
+            energia renovável e sustentável, com baixo impacto ambiental. Fonte limpa e promissora. Custo de instalação
+            ainda é elevado.</p>
+          <img src="solar.png" alt="Solar" class="img-solar">
+        </div>
+        <div class="card">
+          <h3>CARVÃO MINERAL</h3>
+          <p>O carvão mineral é uma fonte de energia não renovável, utilizada principalmente para geração de
+            eletricidade, especialmente em termelétricas. Alta emissão de poluentes. No Brasil, representa cerca de 5%
+            da matriz energética e 3% da matriz elétrica, sendo um recurso finito e que pode se esgotar com o passar dos
+            anos.</p>
+          <img src="mineral.png" alt="Carvão Mineral" class="img-mineral">
+        </div>
+        <div class="card">
+          <h3>EÓLICA</h3>
+          <p>A energia eólica é uma forma de energia renovável que aproveita a força do vento para gerar eletricidade.
+            Esta energia é convertida em energia elétrica através de aerogeradores, que são estruturas com hélices que
+            giram com o vento, impulsionando um sistema de geração de energia. Limpa e crescente no Nordeste.</p>
+          <img src="eolica.png" alt="Eólica" class="img-eolica">
+        </div>
+      </div>
+    </section>
+
+    <br>
+    <h2>Gráfico Estatístico</h2>
+    <p>O gráfico apresentado mostra a matriz energética do Brasil, ou seja, a participação de cada fonte de energia no
+      total de energia consumida no país. De acordo com os dados, a principal fonte de energia utilizada é o petróleo e
+      seus derivados, que correspondem a 35,7% da matriz energética brasileira. Essa é uma fonte não-renovável e muito
+      utilizada nos transportes e na indústria.
+      Em segundo lugar, destacam-se os derivados da cana-de-açúcar, com 15,4%, uma fonte renovável bastante presente no
+      Brasil, principalmente na produção de etanol. A energia hidráulica aparece logo depois, com 12,5%, sendo uma das
+      principais fontes de eletricidade do país, por meio das hidrelétricas. Outras fontes são o gás natural (10,5%) e a
+      lenha e o carvão vegetal (9,0%). Além disso, há participação de outras fontes renováveis (7,0%), carvão mineral
+      (4,6%), energia eólica e solar (3,5%), energia nuclear (1,3%) e outras fontes não-renováveis (0,6%).</p>
+    <br>
+
+    <div class="grafico">
+      <br>
+      <h2>Fontes de Energia no Brasil (%)</2>
+        <canvas id="energiaChart"></canvas>
+    </div>
+
+    <img src="caracteristicas.png" alt="Tabela de características energéticas" class="img-producao">
+
+    <section id="comercio">
+      <h2>Exportações e Importações</h2>
+      <p>O Brasil possui uma matriz energética diversificada, com forte presença de fontes renováveis. No entanto, o
+        país ainda realiza importações significativas de combustíveis fósseis, como o gás natural e derivados de
+        petróleo, especialmente para suprir demandas específicas do setor de transportes e da indústria. Ao mesmo tempo,
+        o Brasil é exportador de petróleo bruto, etanol e energia elétrica em determinadas regiões de fronteira, como
+        para a Argentina e o Paraguai (no caso da Usina de Itaipu). Essa relação entre exportações e importações reflete
+        tanto os avanços quanto os desafios na autossuficiência energética brasileira.</p>
+    </section>
+
+    <section id="petroleo">
+      <h2>Cadeia Produtiva da Energia no Brasil</h2>
+      <p>A cadeia produtiva da energia no Brasil é composta por várias etapas: exploração, produção, transformação,
+        distribuição e consumo final. No setor de petróleo, por exemplo, essa cadeia inclui desde a extração em campos
+        terrestres ou marítimos (como o pré-sal), o refino nas refinarias nacionais, até a distribuição para os postos
+        de combustíveis. No caso das fontes renováveis, como a biomassa e a energia hidráulica, há também uma complexa
+        rede produtiva, que envolve desde a produção agrícola (como a cana-de-açúcar para o etanol), a geração de
+        energia nas usinas e a transmissão até os centros consumidores.</p>
+    </section>
+
+    <img src="Apresentação Educacional Geografia Humana Scrapbook Verde e Marrom (1).png" alt="contexto de produção"
+      class="img-producao">
+
+    <br>
+    <section id="audio-narrativa"
+      style="background-color: #f8d9c939; border: 2px solid rgb(249, 136, 31); padding: 20px; margin: 30px auto; max-width: 500px; text-align: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <h2 style=" margin-bottom: 10px;">Narrativa: O Que são Matrizes Energéticas?</h2>
+      <audio controls style="width: 100%; outline: none; border-radius: 5px;">
+        <source src="Maria e Ana.m4a" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+      <p style="margin-top: 10px; font-style: italic; color: #555;">Elaborado por: Maria Eduarda de
+        Andrade.<br>Realização: Maria Eduarda de Andrade e Ana Lívia Domingas.</p>
+    </section>
+    <br>
+
+    <main class="container">
+      <section id="introducao">
+        <h2>CADEIA PRODUTIVA</h2>
+        <img src="producao.png" alt="contexto de produção" class="img-producao">
+        <p>A cadeia produtiva é o conjunto de processos e etapas interligadas que envolvem a produção de um bem ou
+          serviço, desde a extração ou produção da matéria-prima até a entrega do produto final ao consumidor. Cada
+          etapa dessa cadeia contribui para agregar valor ao produto, envolvendo diferentes setores da economia, como a
+          agricultura, a indústria, os serviços de transporte, a comercialização e o consumo final. </h2>
+      </section>
+      <br>
+
+      <h3>As Etapas da Cadeia Produtiva Incluem:</h3>
+
+      <ol>
+        <li>Obtenção de matéria-prima: é a fase inicial, onde se extraem os recursos naturais por meio da agropecuária
+          ou do extrativismo.</li>
+        <br>
+        <li>Transformação da matéria-prima: beneficiamento ou industrialização, onde é
+          transformada em produtos ou componentes.</li>
+        <br>
+        <li>Distribuição da matéria-prima: envolve o transporte e a logística necessária para levar os produtos até os
+          pontos de venda.</li>
+        <br>
+        <li>Produto final: é o resultado de todas as etapas anteriores, pronto para ser consumido pelo público.</li>
+      </ol>
+      <br>
+      <br>
+      <div class="meio">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bTEItTAcqBA?si=Fy6wLLJgfuV9wSRB"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+        <br>
+        Assista ao vídeo no YouTube
+        </a>
+      </div>
+      <br>
+    </main>
+    <main class="fontes">
+      <section id="fontes" data-aos="fade-up">
+        <br>
+        <h2>Referências Utilizadas</h2>
+        <ul class="referencias">
+          <li><a href="https://www.epe.gov.br" target="_blank">Empresa de Pesquisa Energética (EPE)</a></li>
+          <li><a href="https://www.aneel.gov.br" target="_blank">Agência Nacional de Energia Elétrica (ANEEL)</a></li>
+          <li><a href="https://www.gov.br/mme" target="_blank">Ministério de Minas e Energia (MME)</a></li>
+          <li><a href="https://www.gov.br/anp" target="_blank">Agência Nacional do Petróleo, Gás Natural e
+              Biocombustíveis (ANP)</a></li>
+          <li><a href="https://www.ibge.gov.br" target="_blank">Instituto Brasileiro de Geografia e Estatística
+              (IBGE)</a></li>
+          <li><a href="https://fgvenergia.fgv.br" target="_blank">FGV Energia</a></li>
+          <li><a href="https://www.iea.org" target="_blank">Agência Internacional de Energia (IEA)</a></li>
+          <li><a href="https://www.brasil2050.gov.br" target="_blank">Plataforma Brasil 2050 - Sustentabilidade e
+              Energia</a></li>
+        </ul>
+      </section>
+    </main>
+  </main>
+  <br>
+  <footer class="rodape">
+    <p>Maria Andrade - Geografia</p>
+  </footer>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Física: Radioatividade</title>
+    <style>
+        nav {
+            height: 2em;
+            background-color: #0e7c50;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        footer {
+            background-color: #0e7c50;
+            margin-top: 40px;
+            padding: 10px;
+        }
+
+        footer p {
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        p,
+        ul,
+        li {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #0e7c50;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        input[type="number"],
+        input[disabled] {
+            padding: 0.5em;
+            margin: 0.3em 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 0.5em;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        audio {
+            margin-top: 1em;
+            width: 100%;
+        }
+
+        section {
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 2px solid #ccc;
+            margin-left: 15vw;
+            margin-right: 15vw;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="fisbanner.png" style="width: 100vw;">
+    <nav>
+        <a href="#definicao">Definição</a>
+        <a href="#tipos">Tipos de radiação</a>
+        <a href="#deducao">Dedução da fórmula de semidesintegração</a>
+        <a href="#calc">Calculadora por datação de constante de atividade radioativa</a>
+    </nav>
+    <section id="definicao">
+        <h2>Definição</h2>
+        <p>Denomina-se radiação a energia emitida por fontes naturais ou artificiais, que se propaga através de ondas
+            eletromagnéticas ou partículas. Esta radiação, variando de acordo com seu tipo respectivo, dita seu
+            comportamento e capacidade de interção com outros corpos</p>
+    </section>
+    <section id="tipos">
+        <h2>Tipos de radiação</h2>
+        <p>Entre os experimentos úteis para a compreensão dos tipos de radiação, destaca-se um conduzido por Ernest
+            Rutherford, em 1911, envolvendo o seguinte arranjo:</p>
+        <img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/experimento-de-rutherford-particulas-alfa.jpg"
+            style="display: block;   margin-left: auto; margin-right: auto; width: 50%;"
+            alt="Demonstração do experimento conduzido por Rutherford">
+        <p>O primeiro tipo observado, diz respeito às partículas α (do grego, alfa). Tais partícular são sutilmente
+            atraídas
+            pelo polo negativo e, portanto, devem possuir carga positiva. Além disso, eles são pesados, pois
+            diferentemente
+            das outras, sua atração não é tão considerável</p>
+        <p>Aliás, este tipo de radiação foi fundamental para revolucionar a compreensão sobre o modelo atômico: Em outro
+            experimento, ele submeteu uma folha de ouro a um feixe de partículas alfa. Se as partículas chegassem perto
+            de
+            atingir o átomo, este, segundo a carga elétrica, deveria repulsar a partícula e evitar a colisão. Isso de
+            fato
+            ocorreu, mas com uma proporção bem menor que a imaginada pelo modelo de J. J. Thompson.</p>
+        <iframe src="https://phet.colorado.edu/sims/html/rutherford-scattering/latest/rutherford-scattering_pt_BR.html"
+            width="100%" height="800px" allowfullscreen>
+        </iframe>
+        <p>A razão encontrada para a maioria das partículas terem passado intactas, sem nenhuma alteração em sua
+            direção,
+            diz respeito justamente a outra propriedade dos átomos: Seu tamanho. A única coisa que poderia impedir tal
+            fenômeno, seria se os átomos tivessem um tamanho menor que o imaginado e que, sendo assim, não interaria com
+            as
+            partículas.</p>
+        <p>Dessa forma, a equipe de Rutherford foi capaz de ter uma ideia sobre o tamanho de cada partícula, sendo eles
+            todos medidos em fm, ou femômetro, que equivalem a $$10^{15}$$ metros:</p>
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Partícula</th>
+                    <th>Tamanho Aproximado (raio)</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Próton</td>
+                    <td>~0,84 - 0,87 fm</td>
+                    <td>~2,21 - 2.37 fm³</td>
+                </tr>
+                <tr>
+                    <td>Nêutron</td>
+                    <td>~0,84 - 0,87 fm</td>
+                    <td>~2,21 - 2.37 fm³</td>
+                </tr>
+                <tr>
+                    <td>Elétron</td>
+                    <td>0,001 fm (ou considerado pontual)</td>
+                    <td>3.14E-6 fm³</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Voltando ao tema inicial, o segundo tipo identificado por Rutherford foi a radiação β (beta). Ao contrário
+            das
+            partículas alfa, as beta foram fortemente desviadas pelo campo magnético, mas na direção oposta, o que
+            indicava
+            que eram partículas com carga negativa. Posteriormente, descobriu-se que se tratava de elétrons emitidos com
+            altíssima velocidade, liberados durante o processo de desintegração de certos núcleos atômicos instáveis.
+            Por
+            serem muito leves, essas partículas sofrem maior influência de campos elétricos e magnéticos e têm um poder
+            de
+            penetração maior que as partículas alfa, embora ainda sejam facilmente bloqueadas por materiais como
+            alumínio
+            fino.</p>
+        <p>Já o terceiro tipo de radiação, denominado gama (γ), apresentou características bem distintas: ela não foi
+            desviada por campos elétricos nem magnéticos, o que indicava ausência de carga elétrica. Essa radiação
+            revelou-se extremamente penetrante e só era atenuada por materiais densos, como chumbo ou concreto. Estudos
+            posteriores mostraram que a radiação gama é, na verdade, uma forma de energia eletromagnética — semelhante à
+            luz
+            visível e aos raios X, mas com frequência e energia muito mais elevadas. Ela costuma ser emitida após a
+            liberação de partículas alfa ou beta, como forma do núcleo instável liberar o excesso de energia
+            remanescente.
+        </p>
+    </section>
+    <section id="deducao">
+        <h2>Dedução da fórmula da meia-vida (semidesintegração)</h2>
+
+        <p>Em processos radioativos, os núcleos instáveis de um material se desintegram espontaneamente ao longo do
+            tempo. A
+            quantidade de núcleos que ainda não se desintegraram após certo tempo \( t \) segue uma <strong>lei
+                exponencial
+                decrescente</strong>:</p>
+
+        <p style="text-align:center;">$$N(t) = N_0 e^{-\lambda t}$$</p>
+
+        <ul>
+            <li><strong>\( N(t) \)</strong>: quantidade de núcleos restantes no tempo \( t \)</li>
+            <li><strong>\( N_0 \)</strong>: quantidade inicial de núcleos (em \( t = 0 \))</li>
+            <li><strong>\( \lambda \)</strong>: constante de decaimento radioativo</li>
+            <li><strong>\( e \)</strong>: número de Euler, aproximadamente 2,718</li>
+        </ul>
+
+        <h3>Objetivo: encontrar a fórmula da meia-vida</h3>
+        <p>A meia-vida, representada por \( T_{1/2} \), é o tempo necessário para que metade dos núcleos presentes
+            inicialmente se desintegrem.</p>
+
+        <p>Assim, queremos encontrar o valor de \( t \) tal que:</p>
+        <p style="text-align:center;">$$N(T_{1/2}) = \frac{N_0}{2}$$</p>
+
+        <p>Substituímos na fórmula da desintegração:</p>
+        <p style="text-align:center;">$$\frac{N_0}{2} = N_0 e^{-\lambda T_{1/2}}$$</p>
+
+        <p>Agora, dividimos ambos os lados da equação por \( N_0 \) (desde que \( N_0 \ne 0 \)):</p>
+        <p style="text-align:center;">$$\frac{1}{2} = e^{-\lambda T_{1/2}}$$</p>
+
+        <p>Para "trazer o expoente para baixo", aplicamos o logaritmo natural (ln) em ambos os lados:</p>
+        <p style="text-align:center;">$$\ln\left(\frac{1}{2}\right) = \ln\left(e^{-\lambda T_{1/2}}\right)$$</p>
+
+        <p>Pelo logaritmo de uma potência:</p>
+        <p style="text-align:center;">$$\ln\left(e^{-\lambda T_{1/2}}\right) = -\lambda T_{1/2}$$</p>
+
+        <p>Portanto:</p>
+        <p style="text-align:center;">$$\ln\left(\frac{1}{2}\right) = -\lambda T_{1/2}$$</p>
+
+        <p>Sabendo que \( \ln\left(\frac{1}{2}\right) = -\ln 2 \), temos:</p>
+        <p style="text-align:center;">$$-\ln 2 = -\lambda T_{1/2}$$</p>
+
+        <p>Cancelamos o sinal negativo dos dois lados:</p>
+        <p style="text-align:center;">$$\ln 2 = \lambda T_{1/2}$$</p>
+
+        <p>E por fim, isolamos \( T_{1/2} \):</p>
+        <p style="text-align:center;"><strong>$$T_{1/2} = \frac{\ln 2}{\lambda}$$</strong></p>
+
+        <h3>Conclusão:</h3>
+        <p>Essa fórmula mostra que a meia-vida de um elemento depende apenas da constante de decaimento \( \lambda \).
+            Quanto maior \( \lambda \), mais rápido o elemento decai, e portanto menor sua meia-vida.</p>
+
+        <p><em>Exemplo:</em> Se \( \lambda = 0{,}693 \), então:</p>
+        <p style="text-align:center;">$$T_{1/2} = \frac{\ln 2}{0{,}693} \approx 1$$</p>
+        <p>Ou seja, metade da substância se desintegra em uma unidade de tempo.</p>
+    </section>
+    <section id="calc">
+        <h2>Calculadora de Idade por Decaimento Radioativo</h2>
+        <p>Com base na equação:</p>
+        <p style="text-align:center;">$$t = \frac{1}{\lambda} \ln\left(\frac{N_0}{N(t)}\right)$$</p>
+        <p>OBS: Não importa se será em anos ou nanossegundos, a resposta será na unidade referente a constante de
+            atividade. Por exemplo, se utilizar 0.000124 para datação de carbono, a resposta estará em anos, pois:
+            $$A_{carbono} = 0.000124\ anos^{-1}$$</p>
+
+        <form id="calc-form" onsubmit="calcularIdade(event)">
+            <label for="n0">Quantidade inicial (\( N_0 \)):</label>
+            <input type="number" id="n0" required>
+
+            <label for="nt">Quantidade atual (\( N(t) \)):</label>
+            <input type="number" id="nt" required>
+
+            <label for="lambda">Constante de decaimento (\( \lambda \)):</label>
+            <input type="number" id="lambda" placeholder="(ex de carbono): 0.000124 anos^-1" required>
+
+            <button type="submit">Calcular idade</button>
+        </form>
+
+        <div id="resultado"></div>
+
+        <script>
+            function calcularIdade(event) {
+                event.preventDefault();
+
+                const N0 = parseFloat(document.getElementById('n0').value);
+                const Nt = parseFloat(document.getElementById('nt').value);
+                const lambda = parseFloat(document.getElementById('lambda').value);
+
+                if (Nt <= 0 || N0 <= 0 || lambda <= 0 || Nt > N0) {
+                    document.getElementById('resultado').innerHTML = "Por favor, insira valores válidos (Nt < N0, todos positivos).";
+                    return;
+                }
+
+                const idade = Math.log(N0 / Nt) / lambda;
+
+                document.getElementById('resultado').innerHTML =
+                    `A idade estimada do objeto é <strong>${idade.toFixed(2)}</strong> unidades de tempo.`;
+            }
+        </script>
+    </section>
+    <footer>
+        <p>&copy; 2025 - Física: Radioatividade | Desenvolvido por Leandro S.</p>
+    </footer>
+</body>
+
+</html>

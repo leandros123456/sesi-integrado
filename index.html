@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto Integrador</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .background {
+      background-image: url('fundo barnco.webp');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .conteudo {
+      position: relative;
+      z-index: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 40px;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .imagem-link {
+      width: 45%;
+      min-width: 150px;
+    }
+
+    .imagem-link img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .imagem-link img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .imagem-link {
+        width: 75%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .imagem-link {
+        width: 75%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+  <div class="background"></div>
+
+  <div class="conteudo">
+    <h1>Projeto Integrador SESI/SENAI</h1>
+
+    <div class="grid">
+      <a href="lp.html" class="imagem-link"><img src="pageLP.png" alt="Língua Portuguesa"></a>
+      <a href="mat.html" class="imagem-link"><img src="mat_banner.png" alt="Matemática"></a>
+      <a href="qui.html" class="imagem-link"><img src="qui.png" alt="Química"></a>
+      <a href="bio.html" class="imagem-link"><img src="bio.png" alt="Biologia"></a>
+      <a href="fis.html" class="imagem-link"><img src="fis.png" alt="Física"></a>
+      <a href="geo.html" class="imagem-link"><img src="geo.png" alt="Geografia"></a>
+      <a href="his.html" class="imagem-link"><img src="his.png" alt="História"></a>
+      <a href="ing.html" class="imagem-link"><img src="ing.png" alt="Inglês"></a>
+    </div>
+  </div>
+</body>
+
+</html>
